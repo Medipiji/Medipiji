@@ -1,0 +1,80 @@
+:root{
+    --yellowMain:#e8db2b;
+    --yellowMainDark:#c9be26;
+    --yellowishBright:#C0BA67;
+    --yellowishGray:#969369;
+    --yellowishGrayMDarker:#33321E;
+    --grayM:#6B6A5D;
+    --fullWhite:#FFF;
+    --ninetyWhite:#E6E6E6;
+    --fullBlack:#000;
+    --grayMDarker:#414031;
+    --DpurpleMain:#353040;
+    --DblueMain:#303540;
+}
+
+.flex-row{display: flex; flex-direction: row;}
+.align-itens-center{align-items: center;}
+
+.m-1{margin: 1em;}
+.box-sizing-border-box{box-sizing: border-box;}
+
+body{
+    background: var(--ninetyWhite);
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    min-height: 100vh;
+}
+
+header{
+    background: var(--yellowMain);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.2em 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-header{
+    background: var(--yellowMainDark);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0em 1em;
+}
+
+.menu-header a{
+    color: #414031;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 300ms;
+}
+
+.menu-header a:hover{
+    transform: scale(1.05);
+}
+
+.menu-icon{
+    cursor: pointer;
+}
+
+.menu-header svg{
+    aspect-ratio: 1/1;
+    width: 3em;
+    color: #414031;
+}
+
+
+@media only screen and (max-width:600px) {
+    .menu-header > a, header > #name {
+        display: none;
+    }
+}
