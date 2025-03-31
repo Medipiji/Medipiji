@@ -1,6 +1,7 @@
 :root{
-    --yellowMain:#e8db2b;
-    --yellowMainDark:#c9be26;
+    --yellowMain:#d8b208;
+    --yellowMainDark:#ba9800;
+    --yellowMainLight:#ffdd57;
     --yellowishBright:#C0BA67;
     --yellowishGray:#969369;
     --yellowishGrayMDarker:#33321E;
@@ -18,7 +19,10 @@
 
 .m-1{margin: 1em;}
 .box-sizing-border-box{box-sizing: border-box;}
+.hr-8{width: 80%; margin: 0px auto; height: 1px; background: var(--ninetyWhite);}
 
+
+/* page */
 body{
     background: var(--ninetyWhite);
     margin: 0px;
@@ -33,17 +37,21 @@ body{
     min-height: 100vh;
 }
 
+/*header area*/
 header{
     background: var(--yellowMain);
     width: 100%;
     box-sizing: border-box;
-    padding: 0.2em 1em;
+    padding: 0.3em 1em;
     display: flex;
     justify-content: space-between;
+    height: 10vh;
 }
 
+#name svg{ aspect-ratio: 1/1; width: 30px;}
+
 .menu-header{
-    background: var(--yellowMainDark);
+    background: var(--yellowMainLight);
     border-radius: 7px;
     display: flex;
     align-items: center;
@@ -64,17 +72,139 @@ header{
 
 .menu-icon{
     cursor: pointer;
+    display: none;
 }
 
 .menu-header svg{
     aspect-ratio: 1/1;
-    width: 3em;
+    width: 2em;
     color: #414031;
 }
 
+/*main area*/
+#principal{
+    /* background-image:  linear-gradient(180deg, var(--yellowMain), var(--yellowMain), var(--yellowishGrayMDarker)); */
+    background-image: url("/Medipiji/assets/yellowBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    justify-content: center;
+    padding: 3vh;
+    grid-template-columns: 65vw;
+    grid-template-rows: 28vh 28vh 28vh;
+    box-sizing: border-box;
 
+}
+#principal div:nth-child(1) img{ width: 10vw; border-radius: 100%; box-shadow: 0px 5px 3px 2px rgba(0,0,0,0.3);}
+
+#principal > div:nth-child(1){
+    background-color: var(--fullWhite); 
+    border-radius: 20px 20px 0px 0px; 
+    padding: 1em; 
+    box-shadow: 0px 5px 3px 2px rgba(0,0,0,0.3);
+    font-size: 1.3vw; 
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+#principal > div:nth-child(1) > div {
+    box-shadow: none;
+    background-color: var(--yellowMain);
+    border-radius: 0.5em;
+    padding: 0.2em 0.5em;
+    color: var(--grayMDarker);
+    flex: 1;
+    text-align: center;
+}
+
+#principal > div:nth-child(1) > div > p {
+    background-color: var(--yellowMainLight);
+    padding: 0.5em 0em;
+    border-radius: 5px;
+}
+
+#principal > div:nth-child(1) > div  svg {
+    aspect-ratio: 1/1;
+    width: 1.2vw;
+}
+
+#principal div:nth-child(2), #principal div:nth-child(3){
+    background-color: var(--fullWhite); 
+    box-shadow: 0px 5px 3px 2px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+#principal div:nth-child(2) > h3, #principal div:nth-child(3) > h3{
+    background: var(--yellowMain);
+    /* width: fit-content; */
+    padding: 0.2em 0.5em;
+    border-radius: 5px;
+}
+
+#principal div:nth-child(3){
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+}
+#principal div:nth-child(3) > ul{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 0.5em;
+
+}
+
+/* responsive area*/
 @media only screen and (max-width:600px) {
+    header{
+        flex-direction: row-reverse !important;
+    }
+    .menu-header > .SunMoon{
+        display: none;
+    }
     .menu-header > a, header > #name {
         display: none;
+    }
+    .menu-icon{
+        display: block;
+    }
+    .mobile-menu{
+        position: fixed;
+        top: 0px;
+        left: 100vw;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--yellowMain);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        transition: 300ms;
+    }
+    .showMenu{left:0vw;}
+    .mobile-menu a{
+        color: var(--fullBlack);
+        text-decoration: none;
+    }   
+    .menu-icon a{
+        width: 90%;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 2em;
+        border-bottom: 0.3em solid var(--yellowMainDark);
+    }
+    .menu-icon:first-child{
+        border-bottom:none;
+        display: flex;
+        gap:2em;
+    }
+    .menu-icon:first-child>span>svg{
+        width: 4em;
+        aspect-ratio: 1/1;
     }
 }
