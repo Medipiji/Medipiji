@@ -1,5 +1,5 @@
 :root{
-    --yellowMain:#d8b208;
+    --yellowMain:#e5af00;
     --yellowMainDark:#ba9800;
     --yellowMainLight:#ffdd57;
     --yellowishBright:#C0BA67;
@@ -93,11 +93,20 @@ header{
     justify-content: center;
     padding: 3vh;
     grid-template-columns: 65vw;
-    grid-template-rows: 28vh 28vh 28vh;
+    grid-template-rows: 25vh 25vh 25vh;
     box-sizing: border-box;
 
 }
-#principal div:nth-child(1) img{ width: 10vw; border-radius: 100%; box-shadow: 0px 5px 3px 2px rgba(0,0,0,0.3);}
+#principal div:nth-child(1) > div > img{ 
+    width: 20vh; 
+    border-radius: 1em; 
+    /* box-shadow: 0px 5px 3px 2px rgba(0,0,0,0.3); */
+    border: 1px solid var(--yellowMainLight);
+    /* position: absolute; */
+    /* transform: translate(-25vw, 0vh); */
+    aspect-ratio: 1/1;
+    ;
+}
 
 #principal > div:nth-child(1){
     background-color: var(--fullWhite); 
@@ -115,10 +124,20 @@ header{
     box-shadow: none;
     background-color: var(--yellowMain);
     border-radius: 0.5em;
-    padding: 0.2em 0.5em;
+    padding: 0.1em 0.5em;
+    box-sizing: border-box;
+    height: 22vh;
+    min-height: fit-content;
     color: var(--grayMDarker);
+    display: flex;
     flex: 1;
+    align-items: center;
+    gap: 1em;
     text-align: center;
+}
+
+#principal > div:nth-child(1) > div > h1 {
+    border-bottom: 20px solid var(--yellowMainLight);
 }
 
 #principal > div:nth-child(1) > div > p {
@@ -130,6 +149,15 @@ header{
 #principal > div:nth-child(1) > div  svg {
     aspect-ratio: 1/1;
     width: 1.2vw;
+}
+
+.lightStick{
+    width: 2vw;
+    padding: 0px !important;
+    background: var(--yellowMainLight) !important;
+    box-shadow: none !important;
+    height: 90%;
+    border-radius: 5px;
 }
 
 #principal div:nth-child(2), #principal div:nth-child(3){
